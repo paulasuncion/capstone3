@@ -9,8 +9,10 @@ function CreatemAPost() {
   let loginData = getLoginData();
   var myHeaders = new Headers();
   myHeaders.append("accept", "application/json");
-  myHeaders.append("Authorization", "Bearer " + loginData.token);
   myHeaders.append("Content-Type", "application/json");
+
+  myHeaders.append("Authorization", "Bearer " + loginData.token);
+  // myHeaders.append("Content-Type", "application/json");
   
   var raw = JSON.stringify({
     text: document.getElementById("getPost").value

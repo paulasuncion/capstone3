@@ -52,31 +52,83 @@
 
 
 
+// function createApost() {
+//   const token = getLoginData()
+//   // console.log(token.token)
+//   const message = document.getElementById("postArea").value
+//   let myHeaders = new Headers();
+//   myHeaders.append("Authorization", "bearer", + token.token);
+//   myHeaders.append("Content-type", "Application/json");
+
+
+//   let raw = JSON.stringify({
+//     text: message
+//   });
+//   console.log(raw)
+
+//   let requestOptions = {
+//     method: 'POST',
+//     headers: myHeaders,
+//     body: raw,
+//     redirect: 'follow'
+//   };
+  
+//   fetch("https://microbloglite.herokuapp.com/api/posts", requestOptions)
+//     .then(response => response.text())
+//     .then(result => console.log(result))
+//     .catch(error => console.log('error', error));
+
+// }
+
+///////
+
 function createApost() {
   const token = getLoginData()
-  console.log(token.token)
   const message = document.getElementById("postArea").value
-  let myHeaders = new Headers();
-  myHeaders.append("Authorization", "bearer", + token.token);
-  myHeaders.append("Content-type", "Application/json");
+let myHeaders = new Headers();
+myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN0cmluZyIsImlhdCI6MTY3NDI1MjI1NSwiZXhwIjoxNjc0MzM4NjU1fQ.McHbg8_7oWb93uLSte8Nxt8ldt8cn6d6WuYvL-1VN4I");
+myHeaders.append("Content-Type", "application/json");
+
+var raw = JSON.stringify({
+  "text": message
+});
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("https://microbloglite.herokuapp.com/api/posts", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+}
 
 
-  let raw = JSON.stringify({
-    text: message
-  });
-  console.log(raw)
+function displayPost() {
+  const token = getLoginData()
+  const message = document.getElementById("showPost")
+let myHeaders = new Headers();
+myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN0cmluZyIsImlhdCI6MTY3NDI1NDk0NSwiZXhwIjoxNjc0MzQxMzQ1fQ.oiAHIQzc_GWDXKwENOjidaWQRYQpQtCJXPnc84p5gOM");
+myHeaders.append("Content-Type", "application/json");
 
-  let requestOptions = {
-    method: 'POST',
-    headers: myHeaders,
-    body: raw,
-    redirect: 'follow'
-  };
+
+
+let requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
   
-  fetch("https://microbloglite.herokuapp.com/api/posts", requestOptions)
-    .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
+  redirect: 'follow'
+};
+
+fetch("https://microbloglite.herokuapp.com/api/posts?limit=500&offset=0", requestOptions)
+  .then(response => response.text())
+  .then((result => {document.getElementById("showPost").innerHTML;}))
+  .catch(error => console.log('error', error));
+
 
 }
+
 
