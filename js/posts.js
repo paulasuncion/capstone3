@@ -82,6 +82,9 @@
 
 ///////
 
+function test(){
+  alert('hi')
+  }
 function createApost() {
   const token = getLoginData()
   const message = document.getElementById("postArea").value
