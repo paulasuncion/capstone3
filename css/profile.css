@@ -1,6 +1,6 @@
 body {
   background-color: white;
-  width: 1400px;
+  width: auto;
 }
 
 .padding {
@@ -103,7 +103,8 @@ p {
   width: 30%;
   margin-left: 5px;
   padding-right: 40px;
-  margin-top: -1400px;
+  margin-top: -1425px;
+
 }
 a {
   color: #666;

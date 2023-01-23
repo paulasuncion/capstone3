@@ -32,29 +32,19 @@
       <!-- Collection of nav links, forms, and other content for toggling -->
       <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
         <div class="navbar-nav">
-          <a href="#" class="nav-item nav-link">Home</a>
-          <a href="#" class="nav-item nav-link">About</a>
-                <a href="#" class="nav-item nav-link">Blog</a>
-          <a href="#" class="nav-item nav-link">Contact</a>
-                </div>
+          <a href="login.html" class="nav-item nav-link">Home</a>
+          <a href="profile.html" class="nav-item nav-link">Profile</a>
+          <a href="posts.html" class="nav-item nav-link">Posts</a>
+          <a href="registration.html" class="nav-item nav-link" onclick="">Registeration</a>
+        </div>
           
           
         </div>
         
-        <div class="navbar-nav ml-auto action-buttons">
           <div class="nav-item dropdown">
-            <a href="login.html" data-toggle="dropdown" class="nav-link dropdown-toggle mr-4">Login</a>
-                    <div class="dropdown-menu action-form">
-              <form action="/examples/actions/confirmation.php" method="post">
-               
-                
-                <input type="submit" class="btn btn-primary btn-block" value="Login">
-                
-              </form>
-                    </div>
-          </div>
-          <div class="nav-item dropdown">
-            <a href="registration.html" class="btn btn-primary sign-up-btn">Sign up</a>
+            <a href="login.html" class="btn btn-primary sign-up-btn">Sign in</a>
+            <a href="" class="btn btn-secondary sign-up-btn" onclick='logout()'>Sign out</a>
+            
                     <div class="dropdown-menu action-form">
 
               </form>
